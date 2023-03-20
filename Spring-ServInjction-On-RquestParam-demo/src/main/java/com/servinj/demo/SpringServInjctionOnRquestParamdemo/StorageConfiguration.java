@@ -14,11 +14,9 @@ import java.util.stream.Collectors;
 @Data
 public class StorageConfiguration {
 
-    private final List<StorageTypesI> serviceList;
     Map<String, StorageTypesI> servicesMap;
-    @Autowired
     public StorageConfiguration(List<StorageTypesI> serviceList) {
-        this.serviceList = serviceList;
+        System.out.println(serviceList.size());
         this.servicesMap = serviceList.stream().collect(Collectors.toMap(s -> s.printStorageProvider(), Function.identity()));
 
     }
