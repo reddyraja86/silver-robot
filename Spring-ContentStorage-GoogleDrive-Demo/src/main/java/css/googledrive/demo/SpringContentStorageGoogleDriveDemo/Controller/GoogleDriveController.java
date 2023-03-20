@@ -5,6 +5,8 @@ import css.googledrive.demo.SpringContentStorageGoogleDriveDemo.service.FileMana
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +23,11 @@ import java.util.List;
 public class GoogleDriveController {
 	private FileManagerService fileManager;
 
+	private StorageConfiguration storageConfiguration;
+
 	@GetMapping({"/"})
 	public ResponseEntity<List<File>> listEverything() throws IOException, GeneralSecurityException {
+		storageConfiguration.getServicesMap().values().stream().forEach(System.out::println);
 		List<File> files = fileManager.listEverything();
 		return ResponseEntity.ok(files);
 	}

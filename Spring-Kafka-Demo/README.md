@@ -1,6 +1,6 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Kafka Project Details
 
+* Download the Apache Kafka and unzip the folder.
 * Start Zookeeper
    ```
   C:\Home\Personal\Projects\Kafka\Apache>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
@@ -16,6 +16,7 @@ The following was discovered as part of building this project:
 
 Kafka Project
 ==============
+In this project we will Stream the data from Wiki Media using kafka producer send the data to kafka topic.We will read this data from kafka consumer.
 
     Wiki Media sends the events in a stream/Twittwer 
     |
